@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "bec51852-bc8e-453e-8738-1863455297c9",
+		"name": "go-distributed-lock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30945603"
+	},
+	"item": [
+		{
+			"name": "Client A",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/lock?resource_id=my-test-key",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"lock"
+					],
+					"query": [
+						{
+							"key": "resource_id",
+							"value": "my-test-key"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client B",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/lock?resource_id=my-test-key",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"lock"
+					],
+					"query": [
+						{
+							"key": "resource_id",
+							"value": "my-test-key"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
